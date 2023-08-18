@@ -76,19 +76,6 @@ int32_t main(){
         int a,b,c;cin>>a>>b>>c;
         int node=lca(a,b);
         int c1=lca(a,c),c2=lca(b,c);
-        /*
-        int g=b;
-        if(h[b]<h[a])g=a;
-        if((isancestor(g,c))){
-            add[a]++;
-            add[b]++;
-            add[node]-=2;
-            add[node]-=caldist(node,c);
-            if(node!=a)ans[a]+=caldist(a,c);
-            if(node!=b)ans[b]+=caldist(b,c);
-            continue;
-        }
-        */
         //is node an ancestor of c1
         //if not == not in subtree
         int g;
