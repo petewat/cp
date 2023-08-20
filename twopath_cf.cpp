@@ -79,14 +79,7 @@ int32_t main(){
     while(q--){
         int u,v;cin>>u>>v;
         int node=lca(u,v);
-        if(node==u||node==v){
-            if(node==v)swap(u,v);
-            cout<<up[node]+down[v]+(dist[v]-dist[node])<<'\n';
-        }
-        else{
-            int ans=down[u]+down[v]+up[node]+(dist[u]+dist[v])-(2*dist[node])-val[node]-all[node];
-            cout<<ans<<'\n';
-        }
-    }   
+        cout<<down[u]+down[v]+up[node]+(dist[u]+dist[v])-(2*dist[node])-val[node]-all[node]<<'\n';
+    }     
     return 0;
 }
