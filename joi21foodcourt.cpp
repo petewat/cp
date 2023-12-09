@@ -105,17 +105,22 @@ int32_t main(){
             qry[a].pb({i,b});
         }
     }
+    int pos,sum;
     for(int i=1;i<=n;i++){
         update(i);
         for(auto j:qry[i]){
-            int l=1,r=j.f,ans=inf,g=f[1].qry(j.f),k=t.qry(1,q,1,j.f,1).mxpref;
+            int g=f[1].qry(j.f),k=t.qry(1,q,1,j.f,1).mxpref;
             k=max(k,0ll);
-            while(l<=r){
-                int mid=l+(r-l)/2;
-                if(f[0].qry(mid)-g-j.s+k>=0)r=mid-1,ans=min(ans,mid);
-                else l=mid+1;
+            pos=0;
+            sum=0;
+            for(int i=lg;i>=0;i--){
+                if(pos+(1ll<<i)<=j.f&&sum+f[0].fwk[pos+(1ll<<i)]<g+j.s-k){
+                    sum+=f[0].fwk[pos+(1<<i)];
+                    pos+=(1<<i);
+                }
             }
-            realans[j.f]=(ans==inf)?-1:findans[ans];
+            pos++;
+            realans[j.f]=(pos>j.f)?-1:findans[pos];
         }
     }
     for(int i=1;i<=q;i++)if(realans[i]!=0)cout<<((realans[i]==-1)?0:realans[i])<<'\n';
