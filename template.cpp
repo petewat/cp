@@ -32,8 +32,12 @@ using namespace std;
 #define int long long
 using namespace std;
 const int mod=1e9+7,mxn=2e5+5,inf=1e18,minf=-1e18,lg=30;
-
-
+int n,k,m;
+void setIO(string name){		
+	ios_base::sync_with_stdio(0); cin.tie(0);		
+	freopen((name+".in").c_str(),"r",stdin);		
+	freopen((name+".out").c_str(),"w",stdout);	
+}
 int32_t main(){
     fastio
 }
