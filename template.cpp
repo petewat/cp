@@ -3,8 +3,10 @@
 #include<map>
 #include<vector>
 #include<string>
+#include<cassert>
 #include<unordered_map>
 #include <queue>
+#include <cstdint>
 #include<cstring>
 #include<limits.h>
 #include<cmath>
@@ -16,7 +18,6 @@
 using namespace std;
 #define ll long long
 #define f first
-#define endl "\n"
 #define s second
 #define pii pair<int,int>
 #define ppii pair<int,pii>
@@ -32,6 +33,7 @@ using namespace std;
 #define int long long
 using namespace std;
 const int mod=1e9+7,mxn=2e5+5,inf=1e18,minf=-1e18,lg=30;
+//#undef int
 int n,k,m;
 void setIO(string name){		
 	ios_base::sync_with_stdio(0); cin.tie(0);		
@@ -41,4 +43,5 @@ void setIO(string name){
 int32_t main(){
     fastio
 }
-
+/*
+*/
