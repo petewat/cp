@@ -76,14 +76,15 @@ struct seg{
 	}
 	void updatepos(int l,int r,int pos,int qpos,int val){
 		push(l,r,pos);
+		if(qpos<l||qpos>r)return;
 		if(l==r){
 			add[pos]=val;
 			push(l,r,pos);
 			return;
 		}
 		int mid=l+(r-l)/2;
-		if(qpos<=mid)updatepos(l,mid,pos*2,qpos,val);
-		else updatepos(mid+1,r,pos*2+1,qpos,val);
+		updatepos(l,mid,pos*2,qpos,val);
+		updatepos(mid+1,r,pos*2+1,qpos,val);
 		v[pos]=min(v[pos*2],v[pos*2+1]);
 	}
 	void updp(int pos,int val){updatepos(0,n,1,pos,val);}
