@@ -35,7 +35,7 @@ using namespace std;
 const int mod=1e9+7,mxn=1e4+5,lg=30,inf=1e18,minf=-1e18;
 int n;
 struct seg{
-	int v[4*mxn+10],add[mxn+10];
+	int v[4*mxn+10],add[4*mxn+10];
 	void init(int n){for(int i=0;i<=4*n;i++)v[i]=add[i]=inf;}
 	void push(int l,int r,int pos){
 		v[pos]=min(v[pos],add[pos]);
