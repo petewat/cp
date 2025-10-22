@@ -1,0 +1,1 @@
+g++ -v main.cpp test.cpp -o main
